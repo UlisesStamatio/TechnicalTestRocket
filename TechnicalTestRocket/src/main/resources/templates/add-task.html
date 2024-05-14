@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Gestor de Tareas</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link href="./../static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    <link href="./../static/assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+        <a th:href="@{/}" class="logo d-flex align-items-center">
+            <span>Gestor de Tareas</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+
+                <li><a th:href="@{/tasks}" class="nav-link scrollto">Ver Tareas</a></li>
+                <li><a th:href="@{/tasks/add}" class="getstarted scrollto">Crear Tarea</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+    </div>
+</header>
+
+<main id="main">
+    <section id="register" class="register">
+        <div class="container mt-4" data-aos="fade-up">
+            <header class="section-header">
+                <h2>Registro</h2>
+                <p>Registra tu tarea pendiente</p>
+            </header>
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <form method="post" th:action="@{/tasks}" th:object="${task}" class="register-form">
+                        <div class="row gy-4">
+                            <div class="col-md-12">
+                                <label for="name" class="form-label">Nombre de la tarea</label>
+                                <input type="text" name="name" class="form-control" id="name" th:field="*{name}" placeholder="Nombre de la tarea" required>
+                                <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error de nombre</div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="description" class="form-label">Descripción</label>
+                                <textarea class="form-control" name="description" id="description" th:field="*{description}" rows="12" placeholder="Descripción de la tarea" required style="resize: none;"></textarea>
+                                <div class="text-danger" th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Error de descripción</div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="startDate" class="form-label">Fecha de Inicio</label>
+                                <input type="date" name="startDate" class="form-control" id="startDate" th:field="*{startDate}" required oninput="limitYear(this)">
+                                <div class="text-danger" th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}">Error de fecha de inicio</div>
+                            </div>
+                            <div class="col-md-12 text-center">
+                                <button style="background: #4154f1;border: 0;padding: 10px 30px;color: #fff;transition: 0.4s;border-radius: 4px;" type="button" onclick="submitForm()">Registrar tarea</button>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="./../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+<script src="./../static/assets/vendor/aos/aos.js"></script>
+<script src="./../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="./../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="./../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="./../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="./../static/assets/js/main.js"></script>
+
+
+<script>
+    function limitYear(input) {
+        if (input.value.length > 10) {
+            input.value = input.value.slice(0, 10);
+        }
+    }
+
+
+    function submitForm() {
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¡No podrás revertir esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Sí, registrar!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    title: 'Registrado!',
+                    text: 'La tarea ha sido registrada exitosamente.',
+                    icon: 'success'
+                }).then(() => {
+                    let form = document.querySelector('.register-form');
+                    form.submit();
+                });
+            }
+        });
+    }
+</script>
+
+
+</body>
+</html>

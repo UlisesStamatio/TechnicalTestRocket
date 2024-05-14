@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Gestor de Tareas</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <link href="./../static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="./../static/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a th:href="@{/}" class="logo d-flex align-items-center">
+            <span>Gestor de Tareas</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+
+                <li><a th:href="@{/tasks}" class="nav-link scrollto">Ver Tareas</a></li>
+                <li><a th:href="@{/tasks/add}" class="getstarted scrollto">Crear Tarea</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+
+    </div>
+</header>
+
+<section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <h1 data-aos="fade-up">La mejor opción para la gestión de tus tareas</h1>
+                <h2 data-aos="fade-up" data-aos-delay="400">Trabajemos juntos por una mejor gestión de tu tiempo.</h2>
+                <div data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center text-lg-start">
+                        <a th:href="@{/tasks/add}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                            <span>Crear Tarea</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                <img src="assets/img/hero-img.png" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<main id="main">
+
+
+    <section id="values" class="values">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Características</h2>
+                <p>¿Qué te podemos ofrecer?</p>
+            </header>
+
+            <div class="row">
+
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="box">
+                        <img src="assets/img/projects.png" class="img-fluid" alt="project management image">
+                        <h3>Gestión Integrada de Proyectos</h3>
+                        <p>Ofrecemos una solución completa para la gestión de proyectos, permitiendo a los usuarios crear, planificar y monitorizar múltiples proyectos de forma simultánea. Integra herramientas de calendario, asignación de recursos y seguimiento del progreso, todo en una interfaz sencilla y fácil de usar.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
+                    <div class="box">
+                        <img src="assets/img/colaboration.png" class="img-fluid" alt="colaboration image">
+                        <h3>Colaboración en Tiempo real</h3>
+                        <p>Facilita la comunicación y colaboración entre los miembros del equipo con funciones de chat en tiempo real, comentarios en tareas, y actualizaciones instantáneas. Esto asegura que todos los miembros del equipo estén siempre al tanto de los últimos cambios y avances, independientemente de su ubicación.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
+                    <div class="box">
+                        <img src="assets/img/personalization.png" class="img-fluid" alt="personazation image">
+                        <h3>Personalización y Flexibilidad.</h3>
+                        <p>Adapta el software a las necesidades específicas de tu equipo con potentes opciones de personalización. Desde la interfaz de usuario hasta los flujos de trabajo específicos del proyecto.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="testimonials" class="testimonials">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Testimonios</h2>
+                <p>¿Qué dicen acerca de nosotros?</p>
+            </header>
+
+            <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p>
+                                Desde que empezamos a usar este software, la coordinación del equipo nunca ha sido tan fácil. La interfaz es intuitiva y nos ayuda a mantener todas nuestras tareas y proyectos organizados. ¡Definitivamente ha incrementado nuestra productividad!
+                            </p>
+                            <div class="profile mt-auto">
+                                <h3>Laura Estévez</h3>
+                                <h4>Gerente de Operaciones</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p>
+                                Lo que más me gusta de este software es la cantidad de personalización que ofrece. Puedo ajustar las vistas y los reportes para que se adapten exactamente a las necesidades de mi equipo. Además, la integración con otras herramientas que ya utilizamos ha sido perfecta.                </p>
+                            <div class="profile mt-auto">
+                                <h3>Tomás Guerrero</h3>
+                                <h4>Desarrollador de Software Senior</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p>
+                                Cualquier problema que hemos tenido ha sido resuelto rápidamente gracias al soporte técnico. Es reconfortante saber que hay un equipo real detrás del software que realmente se preocupa por asegurarse de que todo funcione bien.                </p>
+                            <div class="profile mt-auto">
+                                <h3>Miriam Castillo</h3>
+                                <h4>Directora de Soporte Técnico</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p>
+                                Nuestro equipo es completamente remoto, y este software ha sido un salvavidas. Nos permite mantenernos en sintonía con los avances de cada proyecto y asegurarnos de que todos están en la misma página, sin importar dónde se encuentren.                </p>
+                            <div class="profile mt-auto">
+                                <h3>Roberto Núñez</h3>
+                                <h4>Coordinador de Proyectos Remotos</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="testimonial-item">
+                            <div class="stars">
+                                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                            </div>
+                            <p>
+                                Como gestor de proyectos, he probado varias herramientas y esta es la que se queda. Las funcionalidades de seguimiento del progreso y asignación de recursos son superiores. Lo recomiendo ampliamente a cualquier profesional que busque mejorar la eficiencia de su equipo.                </p>
+                            <div class="profile mt-auto">
+                                <h3>Elena Jiménez</h3>
+                                <h4>Gestora de Proyectos Senior</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <script src="./../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="./../static/assets/vendor/aos/aos.js"></script>
+    <script src="./../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="./../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="./../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="./../static/assets/js/main.js"></script>
+
+    </main>
+</body>
+
+</html>

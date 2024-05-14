@@ -1,0 +1,20 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.technicaltestrocket.repository.TaskMapper">
+
+    <resultMap id="taskResult" type="com.test.technicaltestrocket.model.Task">
+        <id property="id" column="id" />
+        <result property="name" column="name" />
+        <result property="description" column="description" />
+        <result property="startDate" column="start_date" />
+    </resultMap>
+
+    <select id="findAll" resultMap="taskResult">
+        SELECT id, name, description, start_date FROM tasks
+    </select>
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO tasks (name, description, start_date)
+        VALUES (#{name}, #{description}, #{startDate})
+    </insert>
+</mapper>

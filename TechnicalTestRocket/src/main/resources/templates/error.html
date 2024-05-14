@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <link href="./../static/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="./../static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <link href="./../static/assets/css/style.css" rel="stylesheet">
+
+    <title th:if="${status == 403}">Gestor de Tareas | Error 403</title>
+    <title th:if="${status == 404}">Gestor de Tareas | Error 404</title>
+    <title th:if="${status == 500}">Gestor de Tareas | Error 500</title>
+    <title th:if="${status != 500 && status != 404 && status != 403}">Gestor de Tareas | Error Desconocido</title>
+</head>
+
+<body>
+
+<header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+        <a th:href="@{/}" class="logo d-flex align-items-center">
+            <span>Gestor de Tareas</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+
+                <li><a th:href="@{/tasks}" class="nav-link scrollto">Ver Tareas</a></li>
+                <li><a th:href="@{/tasks/add}" class="getstarted scrollto">Crear Tarea</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+
+    </div>
+</header>
+
+<section id="hero" class="hero d-flex align-items-center">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 d-flex flex-column justify-content-center">
+                <h1 data-aos="fade-up">¡Oh no!</h1>
+                <h2 data-aos="fade-up" data-aos-delay="400">Parece que ha ocurrido un problema. Estamos trabajando en solucionarlo.</h2>
+                <div data-aos="fade-up" data-aos-delay="600">
+                    <div class="text-center text-lg-start">
+                        <a th:href="@{/}" class="btn-get-started scrollto d-inline-flex align-items-center justify-content-center align-self-center">
+                            <span>Volver al inicio</span>
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 hero-img" data-aos="zoom-out" data-aos-delay="200">
+                <img src="https://em-content.zobj.net/source/microsoft-teams/363/sad-but-relieved-face_1f625.png" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+
+
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <script src="./../static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="./../static/assets/vendor/aos/aos.js"></script>
+    <script src="./../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./../static/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="./../static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="./../static/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="./../static/assets/js/main.js"></script>
+
+</body>
+
+</html>
